@@ -18,19 +18,21 @@ class _LoginPageState extends State<LoginPage> {
         //Greetings
         child: Center(
           child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Text(
                 'Hello Again!!!',
-                style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+                style: TextStyle(fontSize: 36, fontWeight: FontWeight.bold),
               ),
-              const SizedBox(
-                height: 10,
-              ),
+
               Text(
                 'Welcome Back You\'ve, been missed ',
                 style: TextStyle(
                   fontSize: 20,
                 ),
+              ),
+              const SizedBox(
+                height: 50,
               ),
               // Email fields
               Padding(
@@ -80,7 +82,46 @@ class _LoginPageState extends State<LoginPage> {
               ),
 
               //sign in buttons
-              
+              GestureDetector(
+                onTap: () {},
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 25.0),
+                  child: Container(
+                    height: 48,
+                    decoration: BoxDecoration(
+                        color: Colors.deepPurple,
+                        borderRadius: BorderRadius.circular(12)),
+                    child: Center(
+                        child: Text(
+                      "Sign In",
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 18,
+                          fontWeight: FontWeight.bold),
+                    )),
+                  ),
+                ),
+              ),
+
+              const SizedBox(
+                height: 25,
+              ),
+              //Not a member Register
+
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+                    'Not a member? ',
+                    style: TextStyle(fontWeight: FontWeight.bold),
+                  ),
+                  Text(
+                    'Register Now',
+                    style: TextStyle(
+                        color: Colors.blue, fontWeight: FontWeight.bold),
+                  )
+                ],
+              )
             ],
           ),
         ),
