@@ -13,17 +13,51 @@ class HomePage extends StatelessWidget {
       appBar: AppBar(
         title: Text("Home Page"),
         backgroundColor: Colors.blue,
-        actions: [
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: GestureDetector(
-              child: Icon(Icons.exit_to_app_outlined),
-              onTap: () async {
-                await FirebaseAuth.instance.signOut();
-              },
+      ),
+      drawer: Drawer(
+        child: Column(
+          children: [
+            DrawerHeader(
+              child: Title(
+                  color: Colors.black,
+                  child: Icon(
+                    Icons.menu_book,
+                    size: 50,
+                  )),
             ),
-          )
-        ],
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: ListTile(
+                leading: Icon(Icons.home),
+                title: Text('Home'),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: ListTile(
+                leading: Icon(Icons.login_outlined),
+                title: Text('Log Out'),
+                onTap: () async {
+                  await FirebaseAuth.instance.signOut();
+                },
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: ListTile(
+                leading: Icon(Icons.home),
+                title: Text('Home'),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: ListTile(
+                leading: Icon(Icons.home),
+                title: Text('Home'),
+              ),
+            ),
+          ],
+        ),
       ),
       body: Center(
         child: Column(
